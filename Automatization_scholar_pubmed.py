@@ -1,3 +1,5 @@
+"""Script: automatization scripted used for searching of new variations of DLG1 and DLG4 genes""""
+
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.support.ui import WebDriverWait
