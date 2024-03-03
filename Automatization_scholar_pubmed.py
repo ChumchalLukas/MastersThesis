@@ -21,7 +21,11 @@ DLG1_loss = {
 
 # Main code
 with webdriver.Firefox(service=ser) as driver:
-    
+
+    # Set up - counter, dictionary lenght
+    dict_len = len(DLG1_loss)
+    elements = 0
+
     # Search: google scholar, pubmed - one result, tab to continue
     for variation, full_name in DLG1_loss.items():
 
@@ -49,12 +53,22 @@ with webdriver.Firefox(service=ser) as driver:
         # Navigate to pubmed with the query
         driver.get(f'https://pubmed.ncbi.nlm.nih.gov/?term={query}')
 
-        user_input = input("Enter quit to end: ")
+        # Checking fo continuation
+        user_input = input(f"Enter quit to end or else to continue {elements} out of {dict_len}: ")
 
         if user_input != "quit":
             # Close the current window and switch back to the original window
-            driver.close()
-            driver.switch_to.window(original_window)
-            continue
+            if elements < dict_len:
+                elements += 1
+                driver.close()
+                driver.switch_to.window(original_window)
+            elif elements == dict_len:
+                print("All elements done ...")
+                print("Ending iteration after 5 seconds")          
+                time.sleep(5)
+                break
         else:
+            print(f"Done elements {elements}/{dict_len}")
+            print("Ending program after 3 seconds...")
+            time.sleep(3)
             break
