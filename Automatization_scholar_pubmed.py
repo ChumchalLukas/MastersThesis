@@ -53,7 +53,7 @@ with webdriver.Firefox(service=ser) as driver:
         # Navigate to pubmed with the query
         driver.get(f'https://pubmed.ncbi.nlm.nih.gov/?term={query}')
 
-        # Checking fo continuation
+        # Checking for continuation
         user_input = input(f"Enter quit to end or else to continue {elements} out of {dict_len}: ")
 
         if user_input != "quit":
