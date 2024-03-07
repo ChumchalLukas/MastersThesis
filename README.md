@@ -11,3 +11,4 @@ DataExtraction_CADD_genotype_data.ipynb - script used for filtration variation a
 Alleles_done.ipynb - script for counting genotypes per sample in output variations from DataExtraction_CADD_genotype_data file
 
 Tests_applied_multi.ipynb - file used for applicaton statistics on output data by Alleles_done (multi - multi alelelic variations) 
+Tests_applied_single.ipynb - file used for applicaton statistics on output data by Alleles_done (multi - alternative/reference variations) 
