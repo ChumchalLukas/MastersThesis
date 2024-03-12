@@ -24,7 +24,7 @@ with webdriver.Firefox(service=ser) as driver:
 
     # Set up - counter, dictionary lenght
     dict_len = len(DLG1_loss)
-    elements = 0
+    elements = 1
 
     # Search: google scholar, pubmed - one result, tab to continue
     for variation, full_name in DLG1_loss.items():
